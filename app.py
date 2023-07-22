@@ -15,6 +15,7 @@ def updateData():
             print(response)
             jsonData = response.json()
         except Exception as e:
+            jsonData = e
             print(f'Error: {e}')
         time.sleep(10)
 
