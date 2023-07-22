@@ -13,7 +13,7 @@ def updateData():
         try:
             response = requests.get(apiUrl)
             jsonData = response.status_code
-            if (response.status_code != 200):
+            if (response.status_code == 200):
                 jsonData = response.json()
         except Exception as e:
             jsonData = e
