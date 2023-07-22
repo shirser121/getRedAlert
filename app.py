@@ -12,6 +12,7 @@ def updateData():
     while True:
         try:
             response = requests.get(apiUrl)
+            print(response)
             jsonData = response.json()
         except Exception as e:
             print(f'Error: {e}')
