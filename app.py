@@ -12,8 +12,9 @@ def updateData():
     while True:
         try:
             response = requests.get(apiUrl)
-            print(response)
-            jsonData = response.json()
+            jsonData = response.status_code
+            if (response.status_code != 200):
+                jsonData = response.json()
         except Exception as e:
             jsonData = e
             print(f'Error: {e}')
