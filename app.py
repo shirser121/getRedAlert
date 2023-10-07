@@ -5,10 +5,6 @@ import time
 
 app = Flask(__name__)
 apiUrl = 'https://api.tzevaadom.co.il/alerts-history/'
-proxies = {
-    'http': 'http://80.179.140.189/',
-    'https': 'http://80.179.140.189/',
-}
 
 jsonData = None
 
@@ -16,7 +12,7 @@ def updateData():
     global jsonData
     while True:
         try:
-            response = requests.get(apiUrl, proxies=proxies)
+            response = requests.get(apiUrl)
             jsonData = response.status_code
             jsonData = response.json()
         except Exception as e:
